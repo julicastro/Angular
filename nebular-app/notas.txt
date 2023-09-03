@@ -1,0 +1,7 @@
+npm install --save @nebular/theme @angular/cdk @angular/animations --legacy-peer-deps
+npm i --save eva-icons @nebular/eva-icons --legacy-peer-deps
+"allowedCommonJsDependencies": [], -> en angular.json
+
+ng g m main -> sirve para crear modulos (distinto de componentes)
+ng g c main -> este si crea componentes
+ng g c main --m=/main -> esto lo vincula al modulo main

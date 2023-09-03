@@ -74,6 +74,8 @@ body {
     -2vmin -2vmin 10vmin 1vmin #77477e,
     -6vmin -6vmin 35vmin 3vmin #4b3c4d;
     filter: blur(0.2vmin);
+    position: fixed;
+    z-index: 100;
 }
 
 
