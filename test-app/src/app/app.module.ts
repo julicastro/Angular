@@ -7,6 +7,7 @@ import { TestComponentComponent } from './test-component/test-component.componen
 import { BtnComponent } from  './tools/btn/btn.component'
 import { FireComponent } from './fire/fire.component';
 import { SplitScreenComponent } from './split-screen/split-screen.component';
+import { AnimationComponent } from './animation/animation.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SplitScreenComponent } from './split-screen/split-screen.component';
     TestComponentComponent,
     BtnComponent,
     FireComponent,
-    SplitScreenComponent
+    SplitScreenComponent,
+    AnimationComponent
   ],
   imports: [
     BrowserModule,
