@@ -9,6 +9,8 @@ import { ApiClimaService } from 'src/app/services/api-clima.service';
 export class HomeComponent implements OnInit {
 
   datosClima: any;
+  filtroNombre: string = '';
+  numeroMaximoCiudades: number = 5;
 
   constructor(private climaService: ApiClimaService) { }
 

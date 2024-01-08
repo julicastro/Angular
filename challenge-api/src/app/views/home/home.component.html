@@ -1,5 +1,18 @@
 <div>
-    <li *ngFor="let item of datosClima">
-        {{item.name}}
-    </li>
+    <div>
+        <div>
+            <form>
+                <label for="filtroNombre">Buscar por nombre: </label>
+                <input type="text" id="filtroNombre" [(ngModel)]="filtroNombre" name="filtroNombre">
+            </form>
+        </div>
+        <div>
+            <a href="">Ver Historial</a>
+        </div>
+    </div>
+    <ul>
+        <li *ngFor="let item of datosClima | filterByNombre:filtroNombre; let i = index">
+            <a href="">{{i + 1}} - {{ item.name }}</a>
+        </li>
+    </ul>
 </div>
