@@ -1,3 +1,5 @@
-<div *ngIf="datosClima">
-    <p>{{ datosClima?._id }}</p>
+<div>
+    <li *ngFor="let item of datosClima">
+        {{item.name}}
+    </li>
 </div>

@@ -14,9 +14,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.climaService.obtenerDatosClima().subscribe((data) => {
-      
       this.datosClima = data;
-      console.log(data); 
+      console.log(data.name); 
     });
   }
 
