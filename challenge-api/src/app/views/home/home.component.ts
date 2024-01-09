@@ -28,7 +28,8 @@ export class HomeComponent implements OnInit {
   
   verDetallesCiudad(id: string, item: any): void {
     this.historyService.agregarAlHistorial(item);
-    this.router.navigate(['/city-details', id]);
+    const navigationExtras = { state: { item: item } };
+    this.router.navigate(['/city-details', id], navigationExtras);
   }
   
 

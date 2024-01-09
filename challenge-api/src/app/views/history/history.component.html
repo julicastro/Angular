@@ -1,11 +1,23 @@
-<div *ngIf="history.length > 0">
-    <h2>Historial</h2>
-    <ul>
-        <li *ngFor="let item of history">
-            {{ item.name }}
-        </li>
-    </ul>
-</div>
-<div *ngIf="history.length === 0">
-    <p>No hay elementos en el historial.</p>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Historial de Ciudades</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of history">
+                        <td>{{ item.name }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div *ngIf="history.length === 0">
+                <p>No hay elementos en el historial.</p>
+            </div>
+
+        </div>
+    </div>
 </div>

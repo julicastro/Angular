@@ -13,4 +13,7 @@ export class HistoryService {
   obtenerHistorial(): any[] {
     return this.historial;
   }
+  
+  /* se podrian agregar más funciones como la de eliminar todo el historia o un solo item */
+
 }
