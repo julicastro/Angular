@@ -1,0 +1,61 @@
+<div class="w-[17rem] rounded-lg overflow-hidden mb-10 bg-white shadow-1 duration-300 hover:shadow-3 flex justify-center items-center content-center tarjeta">
+    <div>
+        <img [routerLink]="['/product', product._id]" class="w-full shadow-sm h-[300px]" src="{{product.image.url}}" alt="Producto">
+        <div class="p-8 text-center sm:p-9 md:p-3 xl:p-9 p-7">
+          <h3>
+            <p
+              class="mb-2 block text-xl font-semibold text-dark hover:text-primary sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
+            >
+            {{product.name}}
+          </p>
+          </h3>
+          <p class="mb-[3rem] text-base leading-relaxed text-body-color h-[50px] m-b-[3px]">
+            {{product.description}}
+          </p>
+
+          <button (click)="addToCart(product)"
+            class="inline-block rounded-full border border-gray-3 px-7 py-1 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary hover:text-gray-500 dark:border-dark-3 dark:text-dark-6"
+          >
+            Agregar al carrito
+        </button>
+        </div>
+        <div class="flex justify-between border-t border-[#e7e7e7]">
+          <div class="flex items-center py-4 px-3 xs:px-4 lg:px-3 xl:px-4">
+            <span class="mr-[2px]">
+              <svg class="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 lg:h-3 lg:w-3 xl:h-5 xl:w-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.6562 7.46875L12.9999 6.59375L10.4375 1.21875C10.25 0.84375 9.74995 0.84375 9.56245 1.21875L6.99995 6.625L1.37495 7.46875C0.9687 7.53125 0.81245 8.0625 1.12495 8.34375L5.2187 12.5625L4.24995 18.4688C4.18745 18.875 4.5937 19.2188 4.9687 18.9688L10.0624 16.1875L15.1249 18.9688C15.4687 19.1562 15.9062 18.8438 15.8124 18.4688L14.8437 12.5625L18.9374 8.34375C19.1874 8.0625 19.0624 7.53125 18.6562 7.46875Z" fill="#FFA645"></path>
+              </svg>
+            </span>
+            <span class="mr-[2px]">
+              <svg class="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 lg:h-3 lg:w-3 xl:h-5 xl:w-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.6562 7.46875L12.9999 6.59375L10.4375 1.21875C10.25 0.84375 9.74995 0.84375 9.56245 1.21875L6.99995 6.625L1.37495 7.46875C0.9687 7.53125 0.81245 8.0625 1.12495 8.34375L5.2187 12.5625L4.24995 18.4688C4.18745 18.875 4.5937 19.2188 4.9687 18.9688L10.0624 16.1875L15.1249 18.9688C15.4687 19.1562 15.9062 18.8438 15.8124 18.4688L14.8437 12.5625L18.9374 8.34375C19.1874 8.0625 19.0624 7.53125 18.6562 7.46875Z" fill="#FFA645"></path>
+              </svg>
+            </span>
+            <span class="mr-[2px]">
+              <svg class="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 lg:h-3 lg:w-3 xl:h-5 xl:w-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.6562 7.46875L12.9999 6.59375L10.4375 1.21875C10.25 0.84375 9.74995 0.84375 9.56245 1.21875L6.99995 6.625L1.37495 7.46875C0.9687 7.53125 0.81245 8.0625 1.12495 8.34375L5.2187 12.5625L4.24995 18.4688C4.18745 18.875 4.5937 19.2188 4.9687 18.9688L10.0624 16.1875L15.1249 18.9688C15.4687 19.1562 15.9062 18.8438 15.8124 18.4688L14.8437 12.5625L18.9374 8.34375C19.1874 8.0625 19.0624 7.53125 18.6562 7.46875Z" fill="#FFA645"></path>
+              </svg>
+            </span>
+            <span class="mr-[2px]">
+              <svg class="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 lg:h-3 lg:w-3 xl:h-5 xl:w-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.6562 7.46875L12.9999 6.59375L10.4375 1.21875C10.25 0.84375 9.74995 0.84375 9.56245 1.21875L6.99995 6.625L1.37495 7.46875C0.9687 7.53125 0.81245 8.0625 1.12495 8.34375L5.2187 12.5625L4.24995 18.4688C4.18745 18.875 4.5937 19.2188 4.9687 18.9688L10.0624 16.1875L15.1249 18.9688C15.4687 19.1562 15.9062 18.8438 15.8124 18.4688L14.8437 12.5625L18.9374 8.34375C19.1874 8.0625 19.0624 7.53125 18.6562 7.46875Z" fill="#FFA645"></path>
+              </svg>
+            </span>
+            <span class="mr-[2px]">
+              <svg class="h-3 w-3 xs:h-4 xs:w-4 sm:h-5 sm:w-5 lg:h-3 lg:w-3 xl:h-5 xl:w-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.6562 7.46875L12.9999 6.59375L10.4375 1.21875C10.25 0.84375 9.74995 0.84375 9.56245 1.21875L6.99995 6.625L1.37495 7.46875C0.9687 7.53125 0.81245 8.0625 1.12495 8.34375L5.2187 12.5625L4.24995 18.4688C4.18745 18.875 4.5937 19.2188 4.9687 18.9688L10.0624 16.1875L15.1249 18.9688C15.4687 19.1562 15.9062 18.8438 15.8124 18.4688L14.8437 12.5625L18.9374 8.34375C19.1874 8.0625 19.0624 7.53125 18.6562 7.46875Z" fill="#FFA645"></path>
+              </svg>
+            </span>
+            
+            <span class="flex justify-center items-center pl-2 text-sm font-semibold text-body-color">
+              (32) Reviews
+            </span>
+          </div>
+          <div class="flex justify-center items-center border-l border-[#e7e7e7] px-3 xs:px-4 lg:px-3 xl:px-4">
+            <span class="text-base font-semibold text-black">
+              ${{product.price}}
+            </span>
+          </div>
+        </div>
+      </div>
+</div>

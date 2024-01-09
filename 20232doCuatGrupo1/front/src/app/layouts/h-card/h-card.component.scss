@@ -1,0 +1,9 @@
+.tarjeta {
+    border: 1px solid rgb(203, 203, 203);
+    transition: box-shadow .5s; 
+}
+
+.tarjeta:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2); 
+}
+

@@ -1,0 +1,31 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-zinc-800">
+
+    <img src="../../../assets/img/bidbay-logo.svg" alt="Logo" class="w-60 mb-4">
+    
+    <h2 class="text-white text-2xl font-semibold mb-4">¡Recupera tu constraseña!</h2>
+    
+    <form [formGroup]="passForm" (ngSubmit)="recuperarContrasena()" class="w-full max-w-md bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-6">
+          <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+          <input type="text" id="username" formControlName="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email">
+          <div class="text-red-600" *ngIf="submitted && passForm.get('username')?.hasError('required')">
+            Ingrese un email.
+          </div>
+          <div class="text-red-600 mt-2" *ngIf="submitted && passForm.get('username')?.hasError('email')">
+            El email no es válido.
+          </div>
+            <div *ngIf="recuperacionEnviada" class="text-green-600 mt-2">
+                Se ha enviado un correo de recuperación de contraseña a {{ passForm.get('username')?.value }}.
+            </div>
+            <div *ngIf="errorRecuperacion" class="text-red-600 my-2">
+                {{ errorRecuperacion }}
+            </div>
+        </div>
+      <div class="flex items-center justify-between">
+        <button class="bg-zinc-900 hover:bg-zinc-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline m-auto" type="submit">Enviar mail
+        </button>
+      </div>
+    </form>
+    <p class="text-gray-600 text-lg">¿Recordaste tu contraseña? <span class="cursor-pointer" routerLink="/login">Inicia
+        sesión</span></p>
+  </div>

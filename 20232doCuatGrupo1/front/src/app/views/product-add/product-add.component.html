@@ -1,0 +1,72 @@
+<div class="container mx-auto my-[5rem] p-10 shadow-xl" style="background-color: rgb(243, 243, 243);">
+  <h2 class="text-2xl text-center font-bold mb-4">Vender</h2>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="w-full max-w-md bg-white shadow-md m-auto rounded px-8 pt-6 pb-8 mb-4" enctype="multipart/form-data">
+    <div class="mb-4">
+      <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nombre</label>
+      <input type="text" id="name" formControlName="name"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+             placeholder="Nombre">
+       <div *ngIf="productForm.get('name')?.hasError('required')" class="text-red-600">
+              El nombre es obligatorio.
+        </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Descripcion</label>
+      <textarea id="description" formControlName="description"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+             placeholder="Descripcion"></textarea>
+    </div>
+
+    <div class="mb-4">
+      <label for="clasification" class="block text-gray-700 text-sm font-bold mb-2">Categoria</label>
+      <select id="clasification" formControlName="clasification">
+        <option value="" disabled> Selecciona una categoría</option>
+        <option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</option>
+      </select>
+      <div *ngIf="productForm.get('clasification')?.hasError('required')" class="text-red-600">
+        La categoría es obligatoria.
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="stock" class="block text-gray-700 text-sm font-bold mb-2">Stock</label>
+      <input type="number" id="stock" formControlName="stock"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+             placeholder="Stock">
+      <div *ngIf="productForm.get('stock')?.hasError('required')" class="text-red-600">
+              El stock es obligatorio.
+      </div>
+      <div *ngIf="productForm.get('stock')?.hasError('min')" class="text-red-600">
+        El stock debe ser mayor o igual a 1.
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="price" class="block text-gray-700 text-sm font-bold mb-2">Precio</label>
+      <input type="number" id="price" formControlName="price"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+             placeholder="Precio">
+      <div *ngIf="productForm.get('price')?.hasError('required')" class="text-red-600">
+              El precio es obligatorio.
+      </div>
+      <div *ngIf="productForm.get('price')?.hasError('min')" class="text-red-600">
+              El precio debe ser mayor o igual a 1.
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Imagen del producto</label>
+      <input id="image" formControlName="image" type="file" accept="image/png,image/jpeg"
+       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+       placeholder="Imagen" (change)="onFileSelected($event)">
+    </div>
+
+    <div class="flex items-center justify-between">
+      <button type="submit"
+        class="m-auto bg-zinc-900 hover:bg-zinc-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Publicar producto</button>
+    </div>
+  </form>
+
+</div>

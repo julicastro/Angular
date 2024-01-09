@@ -1,0 +1,69 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-zinc-800">
+
+  <img src="../../../assets/img/bidbay-logo.svg" alt="Logo" class="w-60 mb-4">
+
+  <h2 class="text-white text-2xl font-semibold mb-4">¡Regístrate!</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"
+    class="w-full max-w-md bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="mb-4">
+      <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+      <input type="email" id="email" formControlName="email"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Email">
+        <div class="text-red-600" *ngIf="registerForm.get('email')?.hasError('required')">
+          Ingresa un email.
+        </div>
+        <div class="text-red-600" *ngIf="registerForm.get('email')?.hasError('email')">
+          Ingresa un email.
+        </div>
+    </div>
+    <div class="mb-4">
+      <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Contraseña</label>
+      <input type="password" id="password" formControlName="password"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Contraseña">
+        <div class="text-red-600" *ngIf="registerForm.get('password')?.hasError('required')">
+          Ingresa una contraseña.
+        </div>
+        <div class="text-red-600" *ngIf="registerForm.get('password')?.hasError('passwordComplexity')">
+          La contraseña no cumple con los requisitos de complejidad. 
+          Debe tener al menos un dígito, una letra minúscula, una letra mayúscula y un carácter especial.
+        </div>
+    </div>
+    <div class="mb-4">
+      <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nombre</label>
+      <input type="name" id="name" formControlName="name"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Nombre">
+    </div>
+    <div class="mb-4">
+      <label for="lastname" class="block text-gray-700 text-sm font-bold mb-2">Apellido</label>
+      <input type="lastname" id="lastname" formControlName="lastname"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Apellido">
+    </div>
+    <div class="mb-4">
+      <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Dirección</label>
+      <input type="address" id="address" formControlName="address"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Direccion">
+    </div>
+    <div class="mb-4">
+      <label for="telefono" class="block text-gray-700 text-sm font-bold mb-2">Teléfono</label>
+      <input type="telefono" id="telefono" formControlName="telefono"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Telefono">
+    </div>
+    <div *ngIf="errorRecuperacion" class="text-red-600 mt-2">
+      {{ errorRecuperacion }}
+   </div>
+    <div class="flex items-center justify-between">
+      <button type="submit"
+        class="m-auto bg-zinc-900 hover:bg-zinc-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Registrarse</button>
+    </div>
+  </form>
+
+  <p class="text-gray-600 text-lg">¿Ya tienes una cuenta? <span class="cursor-pointer" routerLink="/login">Inicia
+      sesión</span></p>
+</div>

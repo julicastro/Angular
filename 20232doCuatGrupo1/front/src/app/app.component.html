@@ -1,0 +1,7 @@
+<app-header *ngIf="showHeaderAndFooter"></app-header>
+<router-outlet>
+    <app-spinner *ngIf="spinnerService.showSpinner"></app-spinner>
+</router-outlet>
+<app-footer *ngIf="showHeaderAndFooter"></app-footer>
+
+

@@ -1,0 +1,39 @@
+<div class="container mx-auto my-[10rem] p-10 shadow-xl carrito" style="background-color: rgb(243, 243, 243);">
+    <h2 class="text-2xl font-bold mb-4">Carrito de Compras</h2>
+
+    <div class="grid grid-cols-2 gap-4">
+        <div *ngFor="let producto of productosEnCarrito" class="border p-4 flex items-center justify-between" style="background-color: rgb(255, 255, 255);">
+            <div>
+                <h3 class=" mx-2 text-xl font-bold">{{ producto.name }}</h3>
+                <p class=" mx-2 mt-2">{{ producto.description }}</p>
+                <p class=" mx-2 my-2">${{ producto.price }}</p>
+                <div class="mr-3 mb-4 inline-flex items-center rounded border border-[#e7e7e7] text-base font-medium text-black">
+                    <span (click)="disminuirCantidad(producto)" class="inline-block cursor-pointer select-none py-[7px] px-4">
+                      -
+                    </span>
+                    <span class="inline-block py-[7px] px-4">{{ producto.cantidad }}</span>
+                    <span (click)="aumentarCantidad(producto)" class="inline-block cursor-pointer select-none py-[7px] px-4">
+                      +
+                    </span>
+                  </div>
+            </div>
+            <div>
+                <img src="{{ producto.image.url }}" alt="{{ producto.name }}" class="ml-4 rounded-lg" width="80" height="80" />
+
+            </div>
+        </div>
+    </div>
+    <div class="text-xl font-bold mt-4">Total: ${{ calcularTotal() }}</div>
+    <div class="mt-8">
+        <h2 class="text-lg font-bold mb-4">Datos del Comprador</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <input type="text" class="border p-2" placeholder="Nombre" value="{{datosUsuario.name}}">
+            <input type="text" class="border p-2" placeholder="Apellido" value="{{datosUsuario.lastname}}">
+            <input type="email" class="border p-2" placeholder="Correo Electrónico" value="{{datosUsuario.email}}">
+        </div>
+    </div>
+
+    <button class="mt-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="confirmarCompra()">
+        Confirmar Compra
+    </button>
+</div>

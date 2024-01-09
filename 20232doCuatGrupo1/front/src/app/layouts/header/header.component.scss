@@ -1,0 +1,102 @@
+.search-input {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.search-button {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding-right: 10px;
+}
+
+.search-input::placeholder {
+    text-indent: 50px;
+}
+
+header {
+    position: relative;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    margin-right: 5rem;
+    a {
+        color: white;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-left: 3rem;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.1s ease;
+        svg {
+            transform: scale(1.2);
+            stroke-width: 2;
+        }
+        span {
+            margin-left: 0.4rem;
+        }
+    }
+
+    
+}
+
+.header-buttons a:hover {
+    transform: scale(1.2); 
+    animation: rainbow 3s; 
+}
+
+.icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.badge {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: #FFA500;
+  color: black; 
+  border-radius: 50%; 
+  padding: 4px 8px; 
+  font-size: 12px; 
+}
+
+
+@keyframes rainbow {
+    0% {
+      color: #00FFFF;
+    }
+  
+    14% {
+      color: #00FF00;
+    }
+  
+    28% {
+      color: #FF0000;
+    }
+  
+    42% {
+      color: #FFFF00;
+    }
+  
+    57% {
+      color: #FFA500;
+    }
+  
+    71% {
+      color: #00FFFF;
+    }
+  
+    85% {
+      color: #00FF00;
+    }
+  
+    100% {
+      color: #00FFFF;
+    }
+  }

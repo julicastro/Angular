@@ -1,0 +1,52 @@
+<div class="container mx-auto my-[5rem] p-10 shadow-xl" style="background-color: rgb(243, 243, 243);">
+  <h2 class="text-2xl text-center font-bold mb-4">Productos</h2>
+
+  <form [formGroup]="produtcsForm" (ngSubmit)="onSubmit()" class="w-full max-w-md bg-white shadow-md m-auto rounded px-8 pt-6 pb-8 mb-4">
+    <div class="mb-4">
+      <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">Nombre</label>
+      <input type="text" id="nombre" formControlName="nombre"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+             placeholder="Nombre">
+    </div>
+
+    <div class="mb-4">
+      <label for="descripcion" class="block text-gray-700 text-sm font-bold mb-2">Descripcion</label>
+      <input type="descripcion" id="descripcion" formControlName="descripcion"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+             placeholder="Descripcion">
+    </div>
+
+    <div class="mb-4">
+      <label for="clasificacion" class="block text-gray-700 text-sm font-bold mb-2">Clasificacion</label>
+      <input type="clasificacion" id="clasificacion" formControlName="clasificacion"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+             placeholder="Clasificacion">
+    </div>
+
+    <div class="mb-4">
+      <label for="stock" class="block text-gray-700 text-sm font-bold mb-2">Stock</label>
+      <input type="stock" id="stock" formControlName="stock"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+             placeholder="Stock">
+    </div>
+
+    <div class="mb-4">
+      <label for="importe" class="block text-gray-700 text-sm font-bold mb-2">Importe</label>
+      <input type="importe" id="importe" formControlName="importe"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+             placeholder="Importe">
+    </div>
+
+    <div class="mb-4">
+      <label for="fotos" class="block text-gray-700 text-sm font-bold mb-2">Foto</label>
+      <input  accept="image/png,image/jpeg" id="fotos" formControlName="fotos" multiple type="file"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+             placeholder="Foto">
+    </div>
+
+
+
+  </form>
+
+</div>
+

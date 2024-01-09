@@ -1,0 +1,18 @@
+<div class="bg-white shadow-xl h-[10rem] w-[45rem] rounded-lg flex items-center content-center tarjeta">
+    <div class="flex flex-wrap items-center p-5 content-center items-center justify-center">
+        <div class="w-full sm:w-1/4 border-r-gray border-r-[1px] h-full">
+            <a [routerLink]="['/product', product._id]">
+                <img class="w-[200px] h-[100px] m-auto rounded p-3" src="{{product.image.url}}" alt="img">
+            </a>
+        </div>
+        <div class="flex flex-col justify-center w-full sm:w-3/4">
+            <div class="p-4">
+                <a [routerLink]="['/product', product._id]">
+                    <h5 class="text-xl font-semibold ">{{product.name}}</h5>
+                </a>
+                <p class="text-gray-700 text-[1.3rem] mb-4 ">${{product.price}}</p>
+                <button (click)="addToCart(product)" class="bg-[#fd5403] hover:bg-[#fcc101] text-white font-bold py-2 px-4 rounded uppercase">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
