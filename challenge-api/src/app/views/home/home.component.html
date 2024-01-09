@@ -1,18 +1,30 @@
-<div>
-    <div>
-        <div>
-            <form>
-                <label for="filtroNombre">Buscar por nombre: </label>
-                <input type="text" id="filtroNombre" [(ngModel)]="filtroNombre" name="filtroNombre">
-            </form>
-        </div>
-        <div>
-            <a href="">Ver Historial</a>
-        </div>
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form class="mb-3">
+          <div class="input-group">
+            <label for="filtroNombre" class="input-group-text">Buscar por nombre: </label>
+            <input type="text" id="filtroNombre" [(ngModel)]="filtroNombre" name="filtroNombre" class="form-control">
+          </div>
+        </form>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Ciudad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of datosClima | filterByNombre:filtroNombre; let i = index;">
+              <td>{{i + 1}}</td>
+              <td>{{ item.name }}</td>
+              <td>
+                <button (click)="verDetallesCiudad(item._id)" class="btn btn-primary">Ver Detalles</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <ul>
-        <li *ngFor="let item of datosClima | filterByNombre:filtroNombre; let i = index">
-            <a href="">{{i + 1}} - {{ item.name }}</a>
-        </li>
-    </ul>
-</div>
+  </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiClimaService } from 'src/app/services/api-clima.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'home',
@@ -10,9 +11,8 @@ export class HomeComponent implements OnInit {
 
   datosClima: any;
   filtroNombre: string = '';
-  numeroMaximoCiudades: number = 5;
 
-  constructor(private climaService: ApiClimaService) { }
+  constructor(private climaService: ApiClimaService, private router: Router) {}
 
   ngOnInit(): void {
     this.climaService.obtenerDatosClima().subscribe((data) => {
@@ -20,5 +20,14 @@ export class HomeComponent implements OnInit {
       console.log(data.name); 
     });
   }
+
+  verHistorial(): void {
+    this.router.navigate(['/history']);
+  }
+  
+  verDetallesCiudad(id: string): void {
+    this.router.navigate(['/city-details', id]);
+  }
+
 
 }

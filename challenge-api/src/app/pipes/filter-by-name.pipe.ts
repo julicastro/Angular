@@ -9,8 +9,8 @@ export class FilterByNamePipe implements PipeTransform {
     if (!items || !filtroNombre) {
       return items;
     }
-
     return items.filter(item => item.name.toLowerCase().includes(filtroNombre.toLowerCase()));
   }
 
 }
+
