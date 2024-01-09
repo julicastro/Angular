@@ -1,1 +1,11 @@
-<p>history works!</p>
+<div *ngIf="history.length > 0">
+    <h2>Historial</h2>
+    <ul>
+        <li *ngFor="let item of history">
+            {{ item.name }}
+        </li>
+    </ul>
+</div>
+<div *ngIf="history.length === 0">
+    <p>No hay elementos en el historial.</p>
+</div>

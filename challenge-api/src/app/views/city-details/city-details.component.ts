@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'city-details',
+  selector: 'app-city-details',
   templateUrl: './city-details.component.html',
   styleUrls: ['./city-details.component.sass']
 })
 export class CityDetailsComponent {
+
+
 
 }
